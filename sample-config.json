@@ -1,0 +1,24 @@
+{
+	"general": {
+		"server-name": "Example.com",
+		"timestamp": "%Y/%m/%d at %H:%M"
+	},
+	"smtp": {
+		"SSL": true,
+		"host": "example.com",
+		"user": "alert@example.com",
+		"pass": "123456789",
+		"recipients": [
+			"your-address@example.com",
+			"your-colleague@example.com"
+		]
+	},
+	"alerts": [
+		{
+			"limit": 60,
+			"type": "smtp",
+			"subject": "Uptime Alert - %(server_name)s",
+			"body": "Your server has been up for %(uptime_seconds)d seconds (%(uptime_stamp)s) now.\r\nCurrent timestamp: %(timestamp)s"
+		}
+	]
+}
