@@ -48,6 +48,6 @@ for alert in config["alerts"]:
 				"subject": alert["subject"] % base_params,
 				"body": alert["body"] % base_params
 			}
-			body = """From: %(from)s\r\nTo: %(recipients)s\r\nSubject: %(subject)s\r\n\r\n%(body)s"""%{"from": config}
+			body = """From: %(from)s\r\nTo: %(recipients)s\r\nSubject: %(subject)s\r\n\r\n%(body)s"""%body_params
 			smtp.sendmail(config["smtp"]["user"],config["smtp"]["recipients"],body)
 			
